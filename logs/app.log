@@ -1,0 +1,168 @@
+[20/Mar/2020:21:09:02 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[20/Mar/2020:21:11:58 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[20/Mar/2020:21:12:01 +0200] ERROR: failed to find any averages: pq: syntax error at or near "GROUP"
+::1 - - [20/Mar/2020:21:12:01 +0200] "POST /api/v0/exchrates/history HTTP/1.1" 500 111 "" "PostmanRuntime/7.20.1"
+[20/Mar/2020:21:13:26 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+::1 - - [20/Mar/2020:21:13:30 +0200] "POST /api/v0/exchrates/history HTTP/1.1" 200 221 "" "PostmanRuntime/7.20.1"
+[20/Mar/2020:21:14:26 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+::1 - - [20/Mar/2020:21:14:36 +0200] "POST /api/v0/exchrates/history HTTP/1.1" 200 221 "" "PostmanRuntime/7.20.1"
+::1 - - [20/Mar/2020:21:14:42 +0200] "POST /api/v0/exchrates/history HTTP/1.1" 200 114 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:10:15:07 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+::1 - - [21/Mar/2020:10:15:11 +0200] "POST /api/v0/exchrates/momental HTTP/1.1" 200 54 "" "PostmanRuntime/7.20.1"
+::1 - - [21/Mar/2020:10:15:36 +0200] "POST /api/v0/exchrates/history HTTP/1.1" 200 221 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:10:18:22 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+::1 - - [21/Mar/2020:10:18:30 +0200] "POST /api/v0/exchrates/history HTTP/1.1" 200 221 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:10:20:36 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+::1 - - [21/Mar/2020:10:20:40 +0200] "POST /api/v0/exchrates/history HTTP/1.1" 200 221 "" "PostmanRuntime/7.20.1"
+::1 - - [21/Mar/2020:10:20:48 +0200] "POST /api/v0/exchrates/history HTTP/1.1" 200 119 "" "PostmanRuntime/7.20.1"
+::1 - - [21/Mar/2020:10:21:01 +0200] "POST /api/v0/exchrates/history HTTP/1.1" 200 119 "" "PostmanRuntime/7.20.1"
+::1 - - [21/Mar/2020:10:21:17 +0200] "POST /api/v0/exchrates/history HTTP/1.1" 200 119 "" "PostmanRuntime/7.20.1"
+::1 - - [21/Mar/2020:10:21:38 +0200] "POST /api/v0/exchrates/history HTTP/1.1" 200 221 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:11:01:47 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+::1 - - [21/Mar/2020:11:03:34 +0200] "GET /api/v0/exchrates/status/EUR HTTP/1.1" 200 57 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:12:47:37 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+::1 - - [21/Mar/2020:12:47:42 +0200] "GET /api/v0/exchrates/status/EUR HTTP/1.1" 200 77 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:12:48:08 +0200] ERROR: finding exchange rate for moment 2020-03-02 15:08:29 +0000 UTC: sql: Scan error on column index 0, name "max": unsupported Scan, storing driver.Value type <nil> into type *time.Time
+::1 - - [21/Mar/2020:12:48:08 +0200] "POST /api/v0/exchrates/momental HTTP/1.1" 500 238 "" "PostmanRuntime/7.20.1"
+::1 - - [21/Mar/2020:12:48:21 +0200] "POST /api/v0/exchrates/momental HTTP/1.1" 200 54 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:13:16:09 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+::1 - - [21/Mar/2020:13:16:14 +0200] "GET /api/v0/exchrates/status/EUR HTTP/1.1" 200 77 "" "PostmanRuntime/7.20.1"
+::1 - - [21/Mar/2020:13:16:17 +0200] "GET /api/v0/exchrates/status/EUR HTTP/1.1" 200 77 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:20:00:49 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:20:01:03 +0200] INFO: Started polling
+::1 - - [21/Mar/2020:20:01:03 +0200] "POST /api/v0/exchrates/start_poll HTTP/1.1" 200 0 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:20:01:03 +0200] ERROR: getting poll response: doing http request: Get "": unsupported protocol scheme ""
+[21/Mar/2020:20:01:41 +0200] INFO: Started polling
+::1 - - [21/Mar/2020:20:01:41 +0200] "POST /api/v0/exchrates/start_poll HTTP/1.1" 200 0 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:20:01:41 +0200] ERROR: getting poll response: doing http request: Get "": unsupported protocol scheme ""
+[21/Mar/2020:20:11:51 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:20:16:44 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:20:17:07 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:20:17:35 +0200] INFO: Starting polling...
+[21/Mar/2020:20:17:35 +0200] INFO: >> Launched polling goroutine
+[21/Mar/2020:20:17:35 +0200] INFO: Started polling
+::1 - - [21/Mar/2020:20:17:35 +0200] "POST /api/v0/exchrates/start_poll HTTP/1.1" 200 0 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:20:17:35 +0200] ERROR: getting poll response: invalide date
+[21/Mar/2020:20:30:36 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:20:30:55 +0200] INFO: Starting polling...
+[21/Mar/2020:20:30:55 +0200] INFO: >> Launched polling goroutine
+[21/Mar/2020:20:30:55 +0200] INFO: Started polling
+::1 - - [21/Mar/2020:20:30:55 +0200] "POST /api/v0/exchrates/start_poll HTTP/1.1" 200 0 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:20:45:15 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:21:00:57 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:21:01:19 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:21:01:33 +0200] INFO: Starting polling...
+[21/Mar/2020:21:01:33 +0200] INFO: >> Launched polling goroutine
+[21/Mar/2020:21:01:33 +0200] INFO: Started polling
+::1 - - [21/Mar/2020:21:01:33 +0200] "POST /api/v0/exchrates/start_poll HTTP/1.1" 200 0 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:21:09:06 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:21:09:13 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:21:09:17 +0200] INFO: Starting polling...
+[21/Mar/2020:21:09:17 +0200] INFO: >> Launched polling goroutine
+[21/Mar/2020:21:09:17 +0200] INFO: Started polling
+::1 - - [21/Mar/2020:21:09:17 +0200] "POST /api/v0/exchrates/start_poll HTTP/1.1" 200 60 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:21:09:29 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:21:09:32 +0200] INFO: Starting polling...
+[21/Mar/2020:21:09:32 +0200] INFO: >> Launched polling goroutine
+[21/Mar/2020:21:09:32 +0200] INFO: Started polling
+::1 - - [21/Mar/2020:21:09:32 +0200] "POST /api/v0/exchrates/start_poll HTTP/1.1" 200 60 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:21:10:47 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:21:10:55 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:21:10:59 +0200] INFO: Starting polling...
+[21/Mar/2020:21:10:59 +0200] INFO: >> Launched polling goroutine
+[21/Mar/2020:21:10:59 +0200] INFO: Started polling
+::1 - - [21/Mar/2020:21:10:59 +0200] "POST /api/v0/exchrates/start_poll HTTP/1.1" 200 60 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:21:11:45 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:21:11:54 +0200] INFO: Starting polling...
+[21/Mar/2020:21:11:54 +0200] INFO: >> Launched polling goroutine
+[21/Mar/2020:21:11:54 +0200] INFO: Started polling
+::1 - - [21/Mar/2020:21:11:54 +0200] "POST /api/v0/exchrates/start_poll HTTP/1.1" 200 60 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:21:13:06 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:21:13:10 +0200] INFO: Starting polling...
+[21/Mar/2020:21:13:10 +0200] INFO: >> Launched polling goroutine
+[21/Mar/2020:21:13:10 +0200] INFO: Started polling
+::1 - - [21/Mar/2020:21:13:10 +0200] "POST /api/v0/exchrates/start_poll HTTP/1.1" 200 60 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:21:13:10 +0200] ERROR: context canceled
+[21/Mar/2020:21:15:26 +0200] INFO: Starting polling...
+[21/Mar/2020:21:15:26 +0200] INFO: >> Launched polling goroutine
+[21/Mar/2020:21:15:26 +0200] INFO: Started polling
+::1 - - [21/Mar/2020:21:15:26 +0200] "POST /api/v0/exchrates/start_poll HTTP/1.1" 200 60 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:21:15:26 +0200] ERROR: context canceled
+[21/Mar/2020:21:16:13 +0200] INFO: >> Exiting...
+[21/Mar/2020:21:20:06 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:21:20:13 +0200] INFO: Started polling
+::1 - - [21/Mar/2020:21:20:13 +0200] "POST /api/v0/exchrates/start_poll HTTP/1.1" 200 60 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:21:20:14 +0200] ERROR: context canceled
+[21/Mar/2020:21:50:22 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:21:50:36 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:21:50:45 +0200] INFO: Started polling
+::1 - - [21/Mar/2020:21:50:45 +0200] "POST /api/v0/exchrates/start_poll HTTP/1.1" 200 60 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:21:50:45 +0200] ERROR: context canceled
+[21/Mar/2020:21:52:02 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:21:52:07 +0200] INFO: Started polling
+::1 - - [21/Mar/2020:21:52:07 +0200] "POST /api/v0/exchrates/start_poll HTTP/1.1" 200 60 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:21:52:07 +0200] ERROR: context canceled
+[21/Mar/2020:21:54:58 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:21:55:04 +0200] INFO: Started polling
+::1 - - [21/Mar/2020:21:55:04 +0200] "POST /api/v0/exchrates/start_poll HTTP/1.1" 200 60 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:21:55:04 +0200] ERROR: context canceled
+[21/Mar/2020:22:03:43 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:22:03:50 +0200] INFO: Started polling
+::1 - - [21/Mar/2020:22:03:50 +0200] "POST /api/v0/exchrates/start_poll HTTP/1.1" 200 60 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:22:04:05 +0200] INFO: >> Exiting...
+[21/Mar/2020:22:10:27 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:22:10:39 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:22:10:43 +0200] INFO: >> Exiting...
+[21/Mar/2020:22:10:53 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:22:11:00 +0200] INFO: Started polling
+::1 - - [21/Mar/2020:22:11:00 +0200] "POST /api/v0/exchrates/start_poll HTTP/1.1" 200 60 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:22:23:54 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:22:38:21 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:22:38:29 +0200] INFO: Started polling
+::1 - - [21/Mar/2020:22:38:29 +0200] "POST /api/v0/exchrates/start_poll HTTP/1.1" 200 60 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:22:41:56 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+[21/Mar/2020:22:42:01 +0200] INFO: Started polling
+::1 - - [21/Mar/2020:22:42:01 +0200] "POST /api/v0/exchrates/start_poll HTTP/1.1" 200 60 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:22:42:53 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+::1 - - [21/Mar/2020:22:43:03 +0200] "GET /api/v0/exchrates/status/USD HTTP/1.1" 200 106 "" "PostmanRuntime/7.20.1"
+[21/Mar/2020:22:48:37 +0200] INFO: started HTTP server on 0.0.0.0:8080
+
+::1 - - [21/Mar/2020:22:48:41 +0200] "GET /api/v0/exchrates/status/USD HTTP/1.1" 200 155 "" "PostmanRuntime/7.20.1"
