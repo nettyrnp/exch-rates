@@ -95,6 +95,18 @@ func (s *RatesService) GetHistory(ctx context.Context, currency string, from, ti
 		Offset:            offset,
 		SecondsInInterval: seconds,
 	}
+
+	//averages,total,err:= s.Repo.GetHistory(ctx, opts)
+	//
+	//var newAverages []entity.Average
+	//for _, a := range averages {
+	//	newAverages=append(newAverages, entity.Average{
+	//		Time: time.Time{},
+	//		Rate: a.ra,
+	//	})
+	//}
+	//
+	//return newAverages,total,err
 	return s.Repo.GetHistory(ctx, opts)
 }
 

@@ -73,7 +73,7 @@ func (r *RDBMSRepository) GetHistory(ctx context.Context, opts RatesQueryOpts) (
 			return err
 		}
 
-		exchrates0, err := scanExchrateRows(rows, opts.SecondsInInterval, opts.Limit)
+		exchrates0, err := scanExchrateRows(rows, opts.SecondsInInterval, opts.Limit) // todo: return total
 		if err != nil {
 			return err
 		}
@@ -142,7 +142,6 @@ func (r *RDBMSRepository) AddExchrate(ctx context.Context, e *entity.Exchrate) e
 			return err
 		}
 		if _, execErr := tx.ExecContext(ctx, query, args...); execErr != nil {
-			//return errors.WithStack(execErr)
 			return execErr
 		}
 
