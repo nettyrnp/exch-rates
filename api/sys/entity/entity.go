@@ -1,6 +1,7 @@
 package entity
 
 import (
+	"fmt"
 	"github.com/nettyrnp/exch-rates/api/common"
 	"github.com/pkg/errors"
 	"time"
@@ -32,6 +33,11 @@ type PollResult struct {
 type Average struct {
 	Time time.Time
 	Rate float64
+}
+
+func (a *Average) String(timeFormat string) string {
+	t := a.Time.Format(timeFormat)
+	return fmt.Sprintf("%s - %.1f", t, a.Rate)
 }
 
 type Exchrate struct {

@@ -15,11 +15,11 @@ import (
 const minute = uint64(60)
 
 type Service interface {
-	StartPolling(ctx context.Context) error
-	StopPolling(ctx context.Context) error
+	StartPolling()
+	StopPolling()
 
 	GetStatus(ctx context.Context, currency string) ([]float64, error)
-	GetHistory(ctx context.Context, currency string, from, till time.Time, aggrType string, limit, offset uint64) ([]entity.Average, int, error)
+	GetHistory(ctx context.Context, currency string, from, till time.Time, aggrType string, limit, offset uint64) ([]string, int, error)
 	GetMomental(ctx context.Context, currency string, moment time.Time) (float64, error)
 }
 
@@ -39,12 +39,12 @@ func New(conf config.Config, name string, r repository.Repository, p poller.Poll
 	}
 }
 
-func (s *RatesService) StartPolling(ctx context.Context) error {
-	return s.Poller.Start(ctx)
+func (s *RatesService) StartPolling() {
+	s.Poller.Start()
 }
 
-func (s *RatesService) StopPolling(ctx context.Context) error {
-	return s.Poller.Stop(ctx)
+func (s *RatesService) StopPolling() {
+	s.Poller.Stop()
 }
 
 func (s *RatesService) GetStatus(ctx context.Context, currency string) ([]float64, error) {
@@ -72,17 +72,18 @@ func (s *RatesService) GetStatus(ctx context.Context, currency string) ([]float6
 	return res, nil
 }
 
-func (s *RatesService) GetHistory(ctx context.Context, currency string, from, till time.Time, aggrType string, limit, offset uint64) ([]entity.Average, int, error) {
+func (s *RatesService) GetHistory(ctx context.Context, currency string, from, till time.Time, aggrType string, limit, offset uint64) ([]string, int, error) {
 	var seconds uint64
+	var timeFormat string
 	switch strings.ToLower(aggrType) {
 	case entity.Aggr1Min:
-		seconds = minute * 1
+		seconds, timeFormat = minute*1, "02-01-2006 15:04"
 	case entity.Aggr5Min:
-		seconds = minute * 5
+		seconds, timeFormat = minute*5, "02-01-2006 15:04"
 	case entity.Aggr1Hour:
-		seconds = minute * 60
+		seconds, timeFormat = minute*60, "02-01-2006 15"
 	case entity.Aggr1Day:
-		seconds = minute * 60 * 24
+		seconds, timeFormat = minute*60*24, "02-01-2006"
 	default:
 		return nil, 0, errors.Errorf("unsupported aggrType '%s'", aggrType)
 	}
@@ -95,7 +96,13 @@ func (s *RatesService) GetHistory(ctx context.Context, currency string, from, ti
 		Offset:            offset,
 		SecondsInInterval: seconds,
 	}
-	return s.Repo.GetHistory(ctx, opts)
+
+	averages, total, err := s.Repo.GetHistory(ctx, opts)
+	if err != nil {
+		return nil, 0, errors.New("getting history")
+	}
+
+	return toStrings(timeFormat, averages), total, nil
 }
 
 func (s *RatesService) GetMomental(ctx context.Context, currency string, moment time.Time) (float64, error) {
@@ -106,4 +113,12 @@ func daysLastMonth() int {
 	t := time.Now()
 	t2 := t.AddDate(0, -1, 0)
 	return -int(math.Round(t2.Sub(t).Hours() / 24))
+}
+
+func toStrings(timeFormat string, averages []entity.Average) []string {
+	var arr []string
+	for _, a := range averages {
+		arr = append(arr, a.String(timeFormat))
+	}
+	return arr
 }

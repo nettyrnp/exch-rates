@@ -11,7 +11,7 @@ import (
 func RequestID() Middleware {
 
 	type ctxKey int
-	const ridKey ctxKey = ctxKey(0)
+	const ridKey = ctxKey(0)
 
 	return func(h http.Handler) http.Handler {
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

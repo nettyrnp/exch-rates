@@ -2,6 +2,7 @@ package sys
 
 import (
 	"os"
+	"time"
 
 	"github.com/gorilla/mux"
 
@@ -33,12 +34,14 @@ func NewRepository(conf config.Config, kind string) *repository.RDBMSRepository 
 func NewPoller(conf config.Config, repo *repository.RDBMSRepository) *poller.RatesPoller {
 	a := &poller.RatesPoller{
 		Cfg: poller.Config{
-			Interval:   conf.PollerInterval,
 			Currencies: conf.PollerBaseCurrencies,
 			URL:        conf.PollerURL,
 			Timeout:    conf.PollerTimeout,
 		},
-		Repo: repo,
+		Repo:    repo,
+		Ticker:  time.NewTicker(conf.PollerInterval),
+		Done:    make(chan bool),
+		ErrorCh: make(chan error),
 	}
 	return a
 }

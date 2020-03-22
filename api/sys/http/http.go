@@ -53,10 +53,7 @@ func (c *Controller) Logs(w http.ResponseWriter, r *http.Request) {
 func (c *Controller) StartPolling(w http.ResponseWriter, r *http.Request) {
 	svcResp := dto.NewServiceResponse()
 
-	if err := c.Service.StartPolling(r.Context()); err != nil {
-		c.respondNotOK(w, http.StatusInternalServerError, svcResp, errors.Wrapf(err, "polling exchange rates data from %v", c.Conf.PollerURL).Error())
-		return
-	}
+	c.Service.StartPolling()
 
 	common.LogInfof("Started polling")
 	respondOK(w, svcResp, "Started polling")
@@ -65,10 +62,7 @@ func (c *Controller) StartPolling(w http.ResponseWriter, r *http.Request) {
 func (c *Controller) StopPolling(w http.ResponseWriter, r *http.Request) {
 	svcResp := dto.NewServiceResponse()
 
-	if err := c.Service.StopPolling(r.Context()); err != nil {
-		c.respondNotOK(w, http.StatusInternalServerError, svcResp, errors.Wrapf(err, "stopping polling").Error())
-		return
-	}
+	c.Service.StopPolling()
 
 	common.LogInfof("Stopped polling")
 	respondOK(w, svcResp, "Stopped polling")
