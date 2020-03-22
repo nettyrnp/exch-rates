@@ -2,6 +2,8 @@ package main
 
 import (
 	"errors"
+	"fmt"
+	"github.com/nettyrnp/exch-rates/api/common"
 	"log"
 	"os"
 
@@ -23,7 +25,12 @@ func startCmd(flags []cli.Flag) cli.Command {
 				return errors.New("you must specify an environment file")
 			}
 
+			fmt.Println("-------------------------------------------------")
+			fmt.Printf("loading environment configuration from %s\n", fname)
+			fmt.Println("-------------------------------------------------")
 			conf := config.Load(fname)
+			conf.Print()
+			common.InitLogger(conf)
 
 			api.Run(conf)
 
@@ -89,7 +96,6 @@ func main() {
 }
 
 // TODO:
-// 1. format Averages: "08-09-2019 17:00 – 65.4"
 // 2. errorCh
 // 3. service tests
 // 4.

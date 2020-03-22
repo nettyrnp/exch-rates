@@ -55,16 +55,10 @@ func Load(filenames ...string) Config {
 	}
 	cfg.LogDir = path.Join(rootDir, cfg.LogDir)
 
-	cfg.Print(strings.Join(filenames, ", "))
-
 	return cfg
 }
 
-func (c Config) Print(fname string) {
-	fmt.Println("-------------------------------------------------")
-	fmt.Printf("loading environment configuration from %s\n", fname)
-	fmt.Println("-------------------------------------------------")
-
+func (c Config) Print() {
 	s := reflect.ValueOf(&c).Elem()
 	typeOfT := s.Type()
 

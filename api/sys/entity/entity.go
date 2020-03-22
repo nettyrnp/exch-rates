@@ -35,8 +35,8 @@ type Average struct {
 	Rate float64
 }
 
-func (a *Average) String() string {
-	t := a.Time.Format("02-01-2006 15:04")
+func (a *Average) String(timeFormat string) string {
+	t := a.Time.Format(timeFormat)
 	return fmt.Sprintf("%s - %.1f", t, a.Rate)
 }
 

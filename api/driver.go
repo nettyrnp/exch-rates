@@ -28,7 +28,6 @@ func Run(c config.Config) {
 
 	LoadModules(api)
 
-	common.InitLogger(c)
 	common.LogInfof("started HTTP server on %s\n", s.Addr)
 
 	err := s.ListenAndServe()

@@ -1,9 +1,5 @@
 package http
 
-import (
-	"github.com/nettyrnp/exch-rates/api/sys/entity"
-)
-
 type historyReq struct {
 	Currency string `json:"currency"`
 	From     string `json:"from"`
@@ -14,8 +10,8 @@ type historyReq struct {
 }
 
 type historyResp struct {
-	Averages []entity.Average `json:"averages"`
-	Total    int              `json:"total"`
+	Averages []string `json:"averages"`
+	Total    int      `json:"total"`
 }
 
 type momentalReq struct {
