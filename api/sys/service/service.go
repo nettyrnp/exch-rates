@@ -15,8 +15,8 @@ import (
 const minute = uint64(60)
 
 type Service interface {
-	StartPolling(ctx context.Context) error
-	StopPolling(ctx context.Context) error
+	StartPolling()
+	StopPolling()
 
 	GetStatus(ctx context.Context, currency string) ([]float64, error)
 	GetHistory(ctx context.Context, currency string, from, till time.Time, aggrType string, limit, offset uint64) ([]string, int, error)
@@ -39,12 +39,12 @@ func New(conf config.Config, name string, r repository.Repository, p poller.Poll
 	}
 }
 
-func (s *RatesService) StartPolling(ctx context.Context) error {
-	return s.Poller.Start(ctx)
+func (s *RatesService) StartPolling() {
+	s.Poller.Start()
 }
 
-func (s *RatesService) StopPolling(ctx context.Context) error {
-	return s.Poller.Stop(ctx)
+func (s *RatesService) StopPolling() {
+	s.Poller.Stop()
 }
 
 func (s *RatesService) GetStatus(ctx context.Context, currency string) ([]float64, error) {

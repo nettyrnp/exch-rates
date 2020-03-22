@@ -58,7 +58,11 @@ func Load(filenames ...string) Config {
 	return cfg
 }
 
-func (c Config) Print() {
+func (c Config) Print(fname string) {
+	fmt.Println("-------------------------------------------------")
+	fmt.Printf("loading environment configuration from %s\n", fname)
+	fmt.Println("-------------------------------------------------")
+
 	s := reflect.ValueOf(&c).Elem()
 	typeOfT := s.Type()
 
@@ -66,6 +70,8 @@ func (c Config) Print() {
 		f := s.Field(i)
 		fmt.Printf("%s=%v\n", typeOfT.Field(i).Name, f.Interface())
 	}
+
+	fmt.Println("-------------------------------------------------")
 }
 
 func getRootDir() (string, error) {

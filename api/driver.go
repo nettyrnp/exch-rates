@@ -8,7 +8,7 @@ import (
 	"github.com/nettyrnp/exch-rates/config"
 )
 
-func Run(c config.Config) {
+func Run(c config.Config) error {
 	r := mux.NewRouter()
 
 	r.Use(
@@ -30,9 +30,10 @@ func Run(c config.Config) {
 
 	common.LogInfof("started HTTP server on %s\n", s.Addr)
 
-	err := s.ListenAndServe()
-	if err != nil {
+	if err := s.ListenAndServe(); err != nil {
 		common.LogFatalf("starting HTTP server failed with %s", err)
+		return err
 	}
-	// todo: graceful shutdown (with a log message)
+
+	return nil
 }
