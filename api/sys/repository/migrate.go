@@ -36,7 +36,13 @@ var migrations = &migrate.MemoryMigrationSource{
 						('2020-03-20 15:07:00'::timestamp,'USD', 66.78888),
 						('2020-03-20 15:08:00'::timestamp,'USD', 67.8),
 						('2020-03-20 15:08:30'::timestamp,'USD', 67.89999),
-						('2020-03-20 15:09:00'::timestamp,'USD', 68.9)
+						('2020-03-20 15:09:00'::timestamp,'USD', 68.9),
+
+						('2020-03-21 17:17:30'::timestamp,'EUR', 86.7),
+						('2020-03-21 17:17:00'::timestamp,'EUR', 86.78888),
+						('2020-03-21 17:18:00'::timestamp,'EUR', 87.8),
+						('2020-03-21 17:18:30'::timestamp,'EUR', 87.89999),
+						('2020-03-21 17:19:00'::timestamp,'EUR', 88.9)
 					;`,
 			},
 			Down: []string{
