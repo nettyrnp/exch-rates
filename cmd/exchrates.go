@@ -88,9 +88,3 @@ func main() {
 		log.Fatalf("error running the application: %s\n", err)
 	}
 }
-
-// TODO:
-// 2. errorCh
-// 3. service tests
-// 4.
-// 5.
